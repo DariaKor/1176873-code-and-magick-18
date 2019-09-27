@@ -1,3 +1,5 @@
+'use strict';
+
 var CLOUD_COLOR = 'rgba(256, 256, 256, 1.0)';
 var CLOUD_X = 100;
 var CLOUD_Y = 10;
@@ -35,9 +37,9 @@ window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X, CLOUD_Y, CLOUD_COLOR);
 
   ctx.fillStyle = '#000';
-  ctx.font = "16px PT Mono";
-  ctx.fillText("Ура вы победили!", CLOUD_X + SHADOW_GAP * 5, CLOUD_Y + SHADOW_GAP * 3);
-  ctx.fillText("Список результатов:", CLOUD_X + SHADOW_GAP * 5, CLOUD_Y + SHADOW_GAP * 3 + FONT_SIZE);
+  ctx.font = '16px PT Mono';
+  ctx.fillText('Ура вы победили!', CLOUD_X + SHADOW_GAP * 5, CLOUD_Y + SHADOW_GAP * 3);
+  ctx.fillText('Список результатов:', CLOUD_X + SHADOW_GAP * 5, CLOUD_Y + SHADOW_GAP * 3 + FONT_SIZE);
 
   for (var i = 0; i < names.length; i++) {
     var maxTime = getMaxElement(times);
@@ -50,7 +52,7 @@ window.renderStatistics = function (ctx, names, times) {
 
     ctx.fillStyle = 'black';
     ctx.fillText(Math.round(times[i]), objectPositionX, textTimePositionY);
-    ctx.fillStyle = (names[i] === "Вы")
+    ctx.fillStyle = (names[i] === 'Вы')
       ? ctx.fillStyle = MY_COLOR
       : 'hsl(' + BLUE_COLOR + ' ,' + saturation + '%, 50%)';
 
